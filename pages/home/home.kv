@@ -1,0 +1,89 @@
+Screen:
+    name: 'home_screen'
+    id: 'home_screen'
+    NavigationLayout:
+        ScreenManager:
+            Screen:
+                BoxLayout:
+                    orientation: 'vertical'
+                    MDToolbar:
+                        title: 'Demo Application'
+                        left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+                        elevation:5
+
+
+                    MDBottomNavigation:
+                        # panel_color: .2, .2, .2, 1
+
+                        MDBottomNavigationItem:
+                            name: 'screen 1'
+                            text: 'Python'
+                            icon: 'language-python'
+
+                            MDLabel:
+                                text: 'Python'
+                                halign: 'center'
+
+                        MDBottomNavigationItem:
+                            name: 'screen 2'
+                            text: 'C++'
+                            icon: 'language-cpp'
+
+                            MDLabel:
+                                text: 'I programming of C++'
+                                halign: 'center'
+
+                        MDBottomNavigationItem:
+                            name: 'screen 3'
+                            text: 'JS'
+                            icon: 'language-javascript'
+
+                            MDLabel:
+                                text: 'JS'
+                                halign: 'center'
+                    # Widget:
+        MDNavigationDrawer:
+            id: nav_drawer
+            ContentNavigationDrawer:
+                orientation: 'vertical'
+                padding: "8dp"
+                spacing: "8dp"
+                AsyncImage:
+                    id: avatar
+                    size_hint: (1,1)
+                    source: ""
+                MDLabel:
+                    text: "Attreya"
+                    font_style: "Subtitle1"
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                MDLabel:
+                    text: "attreya01@gmail.com"
+                    size_hint_y: None
+                    font_style: "Caption"
+                    height: self.texture_size[1]
+                ScrollView:
+                    DrawerList:
+                        id: md_list
+
+                        MDList:
+                            OneLineIconListItem:
+                                text: "Profile"
+
+                                IconLeftWidget:
+                                    icon: "face-profile"
+
+
+
+                            OneLineIconListItem:
+                                text: "Upload"
+
+                                IconLeftWidget:
+                                    icon: "upload"
+
+
+                            OneLineIconListItem:
+                                text: "Logout"
+
+                                IconLeftWidget:
+                                    icon: "logout"
